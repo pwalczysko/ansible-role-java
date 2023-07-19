@@ -3,17 +3,19 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint:
-  name: yamllint
+lint: |
+    yamllint .
+    ansible-lint
+    flake8
 platforms:
   - name: java-jre
-    image: ubuntu:18.04
+    image: ubuntu:20.04
   - name: java-jdk
-    image: ubuntu:18.04
+    image: ubuntu:20.04
   - name: java-jre11
-    image: ubuntu:18.04
+    image: ubuntu:20.04
   - name: java-jdk11
-    image: ubuntu:18.04
+    image: ubuntu:20.04
 provisioner:
   name: ansible
   playbooks:
@@ -37,5 +39,3 @@ scenario:
 verifier:
   name: testinfra
   directory: ../resources/tests/
-  lint:
-    name: flake8
