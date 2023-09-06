@@ -1,7 +1,7 @@
 ---
 # tasks file for roles/java
 
-- name: system packages | install java jre (centos)
+- name: system packages | install java jre (rockylinux)
   become: true
   yum:
     name: >-
@@ -10,7 +10,7 @@
     state: present
   with_items: "{{ java_versions }}"
 
-- name: system packages | install java jdk (centos)
+- name: system packages | install java jdk (rockylinux)
   become: true
   yum:
     name: >-
