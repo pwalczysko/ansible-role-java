@@ -9,13 +9,13 @@ lint: |
     flake8
 platforms:
   - name: java-jre
-    image: centos:7
+    image: rockylinux:9
   - name: java-jdk
-    image: centos:7
+    image: rockylinux:9
   - name: java-jre11
-    image: centos:7
+    image: rockylinux:9
   - name: java-jdk11
-    image: centos:7
+    image: rockylinux:9
 provisioner:
   name: ansible
   playbooks:
@@ -35,7 +35,7 @@ provisioner:
         java_jdk_install: true
 
 scenario:
-  name: centos
+  name: rockylinux
 verifier:
   name: testinfra
   directory: ../resources/tests/
