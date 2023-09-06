@@ -3,7 +3,7 @@
 
 - name: system packages | install java jre (rockylinux)
   become: true
-  yum:
+  ansible.builtin.dnf:
     name: >-
       java-{{ java_backwards_compatibility_version.redhat[item] |
       default(item) }}-openjdk
@@ -12,7 +12,7 @@
 
 - name: system packages | install java jdk (rockylinux)
   become: true
-  yum:
+  ansible.builtin.dnf:
     name: >-
       java-{{ java_backwards_compatibility_version.redhat[item] |
       default(item) }}-openjdk-devel

@@ -3,7 +3,8 @@
 
 - name: system packages | install java jre (ubuntu)
   become: true
-  apt:
+  ansible.builtin.apt:
+    update_cache: true
     name: >-
       openjdk-{{ java_backwards_compatibility_version.debian[item] |
       default(item) }}-jre
@@ -12,7 +13,7 @@
 
 - name: system packages | install java jdk (ubuntu)
   become: true
-  apt:
+  ansible.builtin.apt:
     name: >-
       openjdk-{{ java_backwards_compatibility_version.debian[item] |
       default(item) }}-jdk
