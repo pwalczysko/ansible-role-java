@@ -9,13 +9,13 @@ lint: |
     flake8
 platforms:
   - name: java-jre
-    image: ubuntu:22.04
+    image: rockylinux:9
   - name: java-jdk
-    image: ubuntu:22.04
+    image: rockylinux:9
   - name: java-jre11
-    image: ubuntu:22.04
+    image: rockylinux:9
   - name: java-jdk11
-    image: ubuntu:22.04
+    image: rockylinux:9
 provisioner:
   name: ansible
   playbooks:
@@ -35,7 +35,7 @@ provisioner:
         java_jdk_install: true
 
 scenario:
-  name: ubuntu
+  name: rockylinux-9
 verifier:
   name: testinfra
   directory: ../resources/tests/
