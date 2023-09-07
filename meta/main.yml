@@ -7,12 +7,12 @@ galaxy_info:
   license: BSD
   min_ansible_version: 2.4
   platforms:
-    - name: EL
+    - name: Rocky Linux
       versions:
-        - 7
+        - 9
     - name: Ubuntu
       versions:
-        - focal
+        - jammy
   namespace: ome
   galaxy_tags:
     - system
