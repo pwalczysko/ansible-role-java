@@ -1,8 +1,7 @@
 Java
 ====
 
-
-[![Build Status](https://travis-ci.org/ome/ansible-role-java.svg)](https://travis-ci.org/ome/ansible-role-java)
+[![Actions Status](https://github.com/ome/ansible-role-java/workflows/Molecule/badge.svg)](https://github.com/ome/ansible-role-java/actions)
 [![Ansible Role](https://img.shields.io/ansible/role/41018.svg)](https://galaxy.ansible.com/ome/java/)
 
 Install Java JREs and optionally JDKs.
