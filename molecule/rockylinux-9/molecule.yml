@@ -36,6 +36,8 @@ provisioner:
 
 scenario:
   name: rockylinux-9
+  create_sequence:
+    - lint
 verifier:
   name: testinfra
   directory: ../resources/tests/
