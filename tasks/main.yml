@@ -16,9 +16,9 @@
   when: java_jre_versions is defined
 
 - name: java | import tasks for redhat OS family
-  ansible.builtin.import_tasks: redhat.yml
+  ansible.builtin.include_tasks: redhat.yml
   when: ansible_os_family | lower == 'redhat'
 
 - name: java | import tasks for debian OS family
-  ansible.builtin.import_tasks: debian.yml
+  ansible.builtin.include_tasks: debian.yml
   when: ansible_os_family | lower == 'debian'
