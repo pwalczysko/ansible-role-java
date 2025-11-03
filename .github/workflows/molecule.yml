@@ -35,7 +35,7 @@ jobs:
           python-version: '3.12'
       - name: Install Ansible & Molecule
         run: |
-            pip install "requests < 2.32.0"
+            pip install requests
             pip install ansible ansible-lint flake8
             pip install molecule ansible-compat
             pip install molecule-plugins[docker] pytest-testinfra
