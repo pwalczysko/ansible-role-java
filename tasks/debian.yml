@@ -5,6 +5,7 @@
   become: true
   ansible.builtin.apt:
     update_cache: true
+    cache_valid_time: 86400
     name: >-
       openjdk-{{ java_backwards_compatibility_version.debian[item] |
       default(item) }}-jre
@@ -14,6 +15,8 @@
 - name: system packages | install java jdk (ubuntu)
   become: true
   ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 86400
     name: >-
       openjdk-{{ java_backwards_compatibility_version.debian[item] |
       default(item) }}-jdk
