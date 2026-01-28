@@ -1,6 +1,14 @@
 ---
 # tasks file for roles/java
 
+- name: system packages | install default-jre (ubuntu)
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 86400
+    name: default-jre-headless
+    state: present
+
 - name: system packages | install java jre (ubuntu)
   become: true
   ansible.builtin.apt:
