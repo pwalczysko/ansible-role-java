@@ -24,9 +24,6 @@
     var: service_names
   when: service_names | length > 0
 
-- name: Set dbus_exists value
-
-
 # Necessary for java install on systemd docker images
 - name: system packages | Install dirmngr (ubuntu)
   ansible.builtin.apt:
