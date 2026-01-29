@@ -19,6 +19,10 @@
     service_names: "{{ item.values() | selectattr('name', 'equalto', 'dbus')}}"
   with_items: "{{ ansible_facts.services }}"
 
+- name: Print service facts
+  ansible.builtin.debug:
+    var: service_names
+
 # Necessary for java install on systemd docker images
 - name: system packages | Install dirmngr (ubuntu)
   ansible.builtin.apt:
