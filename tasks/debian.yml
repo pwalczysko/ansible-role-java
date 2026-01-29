@@ -1,6 +1,13 @@
 ---
 # tasks file for roles/java
 
+- name: Populate service facts
+  ansible.builtin.service_facts:
+
+- name: Print service facts
+  ansible.builtin.debug:
+    var: ansible_facts.services
+
 - name: show names of existing systemd services, sometimes systemd knows about services that were never installed
   debug: msg={{ existing_systemd_services | map(attribute='name') }}
   vars:
