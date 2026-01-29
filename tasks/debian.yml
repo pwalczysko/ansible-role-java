@@ -1,6 +1,21 @@
 ---
 # tasks file for roles/java
 
+# Necessary for java install on systemd docker images
+- name: system packages | Install dirmngr (ubuntu)
+  ansible.builtin.apt:
+    name:
+      - dirmngr
+    state: present
+    update_cache: yes
+
+# Necessary for java install on systemd docker images
+- name: system packages | Ensure the man directory exists
+  ansible.builtin.file:
+    path: /usr/share/man/man1
+    state: directory
+    mode: '0755'
+
 - name: system packages | install java jre (ubuntu)
   become: true
   ansible.builtin.apt:
