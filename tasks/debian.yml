@@ -14,6 +14,12 @@
      known_systemd_services: "{{ ansible_facts['services'].values() | selectattr('source', 'equalto', 'sysv') }}"
      existing_systemd_services: "{{ known_systemd_services | rejectattr('state', 'equalto', 'not-found') }}"
 
+- name: Loop over existing services
+  ansible.builtin.debug:
+    var:
+      dbus_service: true
+  when: (existing_systemd_services | map(attribute='name')) == 'dbus'
+
 # Necessary for java install on systemd docker images
 - name: system packages | Install dirmngr (ubuntu)
   ansible.builtin.apt:
