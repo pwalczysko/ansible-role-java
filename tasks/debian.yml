@@ -16,7 +16,7 @@
 
 - name: Loop over existing services
   set_fact:
-    service_names: "{{ item['services'].values() | selectattr('name', 'equalto', 'dbus')}}"
+    service_names: "{{ item.values() | selectattr('name', 'equalto', 'dbus')}}"
   with_items: "{{ ansible_facts.services }}"
 
 # Necessary for java install on systemd docker images
